@@ -19,8 +19,9 @@ describe('Sign Up', () => {
       .select('git-it')
       .should('have.value', 'git-it')
 
-    cy.get('input[type="submit"]')
-      .click()
+    cy.get('form')
+      .submit()
+    cy.wait(3500)
 
     cy.get('li')
       .should('contain', 'Some Name - some@email.com - core - git-it')
